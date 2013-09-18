@@ -38,7 +38,7 @@ MeteorGenerator.prototype.askFor = function askFor() {
 
     // manually deal with the response, get back and store the results.
     // we change a bit this way of doing to automatically do this in the self.prompt() method.
-    this.bootstrap = hasFeature('bootstrap');
+    this.bootstrap = hasFeature('bootstrap'); //todo
 
     cb();
   }.bind(this));
@@ -71,11 +71,6 @@ MeteorGenerator.prototype.app = function app() {
   this.copy('_smart.json', 'smart.json');
   this.copy('LICENSE', 'LICENSE');
   this.copy('README.md', 'README.md');
-  // Setup Bootstrap 3
-  if (this.bootstrap3) {
- 		console.log(chalk.green('Copying Bootstrap 3 Less'));
-     this.mkdir('client/bower');
- 	}
 };
 
 MeteorGenerator.prototype.bower = function bower() {
