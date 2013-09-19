@@ -41,7 +41,7 @@ describe('meteor generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      features: 'bootstrap'
+      bootstrap: true
     });
 
     this.app.options['skip-install'] = true;
