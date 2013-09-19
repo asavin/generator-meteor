@@ -14,32 +14,23 @@ var MeteorGenerator = module.exports = function MeteorGenerator(args, options, c
 
 util.inherits(MeteorGenerator, yeoman.generators.Base);
 
+MeteorGenerator.prototype.welcome = function welcome() {
+  // welcome message
+  console.log(this.yeoman);
+};
+
 MeteorGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
-
   var prompts = [{
-    type: 'checkbox',
-    name: 'features',
-    message: 'Would you include these splendid packages?',
-    choices: [{
-      name: 'Bootstrap 3 for Less',
-      value: 'bootstrap3',
-      checked: true
-    }]
+    type: 'confirm',
+    name: 'bootstrap',
+    message: 'Would you include Bootstrap for Less?',
+    default: true
   }];
 
   this.prompt(prompts, function (answers) {
-    var features = answers.features;
-
-    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
-
-    // manually deal with the response, get back and store the results.
-    // we change a bit this way of doing to automatically do this in the self.prompt() method.
-    this.bootstrap = hasFeature('bootstrap'); //todo
-
+    this.bootstrap = answers.bootstrap;
     cb();
   }.bind(this));
 };
@@ -74,6 +65,9 @@ MeteorGenerator.prototype.app = function app() {
 };
 
 MeteorGenerator.prototype.bower = function bower() {
-  this.copy('bowerrc', '.bowerrc');
-  this.copy('_bower.json', 'bower.json');
+  if (this.bootstrap) {
+    this.log.writeln('Writing Bower Bootstrap Config');
+    this.copy('bowerrc', '.bowerrc');
+    this.copy('_bower.json', 'bower.json');
+  }
 };

@@ -4,8 +4,9 @@ A generator for [Yeoman](http://yeoman.io).
 
 
 ## Prerequisites
-*NPM
-*YO
+* [Meteor](http://meteor.com)
+* [nodejs](http://nodejs.com)
+* [yeoman](http://yeoman.io)
 
 To install yeoman from npm, run:
 
