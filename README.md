@@ -1,12 +1,18 @@
 # generator-meteor [![Build Status](https://secure.travis-ci.org/Pent/generator-meteor.png?branch=master)](https://travis-ci.org/Pent/generator-meteor)
 
-A generator for [Yeoman](http://yeoman.io).
+A Meteor project generator for [Yeoman](http://yeoman.io).
 
 
 ## Prerequisites
-* [Meteor](http://meteor.com)
+* [Meteorite](https://github.com/oortcloud/meteorite)
 * [nodejs](http://nodejs.com)
 * [yeoman](http://yeoman.io)
+
+To install meteorite from npm, run:
+
+```
+$ npm install -g meteorite
+```
 
 To install yeoman from npm, run:
 
@@ -22,12 +28,22 @@ To install generator-meteor from npm, run:
 $ npm install -g generator-meteor
 ```
 
-Finally, initiate the generator:
+Create a new project directory:
 
 ```
 $ mkdir your-new-project && cd $_
+```
+
+Initiate the generator:
+
+```
 $ yo meteor
-$ meteor
+```
+
+Finally, run Meteorite:
+
+```
+$ mrt
 ```
 
 ## License

@@ -27,10 +27,16 @@ MeteorGenerator.prototype.askFor = function askFor() {
     name: 'bootstrap',
     message: 'Would you include Bootstrap for Less?',
     default: true
+  },{
+    type: 'confirm',
+    name: 'ironRouter',
+    message: 'Would you include Iron Router?',
+    default: true
   }];
 
   this.prompt(prompts, function (answers) {
     this.bootstrap = answers.bootstrap;
+    this.ironRouter = answers.ironRouter;
     cb();
   }.bind(this));
 };
@@ -49,17 +55,14 @@ MeteorGenerator.prototype.app = function app() {
 
   this.copy('client/client.js', 'client/client.js');
   this.copy('client/lib/subscriptions.js', 'client/lib/subscriptions.js');
-  this.copy('client/views/layout.html', 'client/views/layout.html');
-  this.copy('client/views/hello.js', 'client/views/hello.js');
+  this.copy('client/views/home.js', 'client/views/home.js');
   this.copy('lib/collections.js', 'lib/collections.js');
   this.copy('server/publications.js', 'server/publications.js');
   this.copy('server/server.js', 'server/server.js');
   this.copy('server/security.js', 'server/security.js');
   this.copy('.meteor/gitignore', '.meteor/.gitignore');
-  this.copy('.meteor/packages', '.meteor/packages');
   this.copy('.meteor/release', '.meteor/release');
   this.copy('gitignore', '.gitignore');
-  this.copy('_smart.json', 'smart.json');
   this.copy('LICENSE', 'LICENSE');
   this.copy('README.md', 'README.md');
 };
@@ -71,3 +74,16 @@ MeteorGenerator.prototype.bower = function bower() {
     this.copy('_bower.json', 'bower.json');
   }
 };
+
+MeteorGenerator.prototype.rootin = function rootin() {
+  if(this.ironRouter) {
+    this.copy('client/views/iron-router/routes.js', 'client/routes.js');
+    this.copy('client/views/iron-router/layout.html', 'client/views/layout.html');
+    this.copy('_smart.json', 'smart.json');
+    this.copy('client/views/iron-router/packages', '.meteor/packages');
+  } else {
+    this.copy('client/views/layout.html', 'client/views/layout.html');
+    this.copy('.meteor/packages', '.meteor/packages');
+  }
+
+}

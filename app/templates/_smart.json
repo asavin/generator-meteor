@@ -3,5 +3,7 @@
     "git": "https://github.com/meteor/meteor.git",
     "branch": "master"
   },
-  "packages": {}
+  "packages": {
+    "iron-router": "0.5.4"
+  }
 }

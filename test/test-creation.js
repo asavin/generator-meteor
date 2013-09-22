@@ -24,7 +24,8 @@ describe('meteor generator', function () {
       'client/client.js',
       'client/lib/subscriptions.js',
       'client/views/layout.html',
-      'client/views/hello.js',
+      'client/views/home.js',
+      'client/views/routes.js',
       'lib/collections.js',
       'server/publications.js',
       'server/server.js',
@@ -41,7 +42,8 @@ describe('meteor generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      bootstrap: true
+      bootstrap: true,
+      rootin: true
     });
 
     this.app.options['skip-install'] = true;
