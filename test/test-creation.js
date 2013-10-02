@@ -27,7 +27,7 @@ describe('meteor generator', function () {
       'client/views/layout.html',
       'client/views/home.html',
       'client/views/home.js',
-      'client/views/routes.js',
+      'client/routes.js',
       'lib/collections.js',
       'public/robots.txt',
       'server/publications.js',
