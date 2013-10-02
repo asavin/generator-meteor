@@ -66,7 +66,7 @@ MeteorGenerator.prototype.app = function app() {
 
 MeteorGenerator.prototype.rootin = function rootin() {
   if(this.ironRouter) {
-    this.copy('client/views/iron-router/routes.js', 'client/routes.js');
+    this.copy('client/routes.js', 'client/routes.js');
     this.copy('client/views/iron-router/layout.html', 'client/views/layout.html');
     this.copy('_smart.json', 'smart.json');
     this.copy('client/views/iron-router/packages', '.meteor/packages');
