@@ -4,6 +4,6 @@
     "branch": "master"
   },
   "packages": {
-    "iron-router": "0.5.4"
+    "iron-router": {}
   }
 }

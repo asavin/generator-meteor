@@ -6,3 +6,9 @@ Template.home.helpers({
     return 'This is a very opinionated generator, future releases will include even more defaults.'
   }
 });
+
+Template.home.events({
+  'click .clicky': function(event, template) {
+    template.find('.clicky').value='clicked.';
+  }
+})

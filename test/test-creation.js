@@ -22,11 +22,14 @@ describe('meteor generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       'client/client.js',
+      'client/styles/theme.css',
       'client/lib/subscriptions.js',
       'client/views/layout.html',
+      'client/views/home.html',
       'client/views/home.js',
       'client/views/routes.js',
       'lib/collections.js',
+      'public/robots.txt',
       'server/publications.js',
       'server/server.js',
       'server/security.js',
@@ -36,13 +39,10 @@ describe('meteor generator', function () {
       '.gitignore',
       'smart.json',
       'LICENSE',
-      'README.md',
-      '.bowerrc',
-      'bower.json'
+      'README.md'
     ];
 
     helpers.mockPrompt(this.app, {
-      bootstrap: true,
       rootin: true
     });
 
