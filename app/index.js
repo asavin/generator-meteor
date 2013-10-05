@@ -34,7 +34,7 @@ MeteorGenerator.prototype.askFor = function askFor() {
 // generate the basic scaffolding for a Meteor project
 MeteorGenerator.prototype.app = function app() {
   this.mkdir('client');
-  this.mkdir('client/compatability');
+  this.mkdir('client/compatibility');
   this.mkdir('client/styles');
   this.mkdir('client/lib');
   this.mkdir('client/views');
