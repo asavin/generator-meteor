@@ -1,6 +1,7 @@
 # generator-meteor [![Build Status](https://secure.travis-ci.org/Pent/generator-meteor.png?branch=master)](https://travis-ci.org/Pent/generator-meteor)
 
 A [Meteor](http://meteor.com) project generator for [Yeoman](http://yeoman.io).
+
 [![NPM](https://nodei.co/npm/generator-meteor.png)](https://nodei.co/npm/generator-meteor/)
 
 ## Prerequisites
@@ -49,12 +50,12 @@ $ mrt
 ## Structure Generated with Iron-Router enabled
 ```
 /
-		.meteor/
-		    .gitignore
-		    packages
-		    release
-		client/
-		    compatibility/
+    .meteor/
+        .gitignore
+        packages
+        release
+    client/
+        compatibility/
         lib/
             subscriptions.js
         styles/
@@ -64,20 +65,20 @@ $ mrt
         home.html
         home.js
         layout.html
-		lib/
-		    collections.js
-		private/
-		public/
-		    fonts/
-		    images/
-		    robots.txt
-		server/
-		    publications.js
-		    security.js
-		    server.js
-		.gitignore <- contains sensible defaults for files/folders to ignore
-		LICENSE <- default empty license file
-		smart.json <- meteorite package definition
+    lib/
+        collections.js
+    private/
+    public/
+        fonts/
+        images/
+        robots.txt
+    server/
+        publications.js
+        security.js
+        server.js
+    .gitignore <- contains sensible defaults for files/folders to ignore
+    LICENSE <- default empty license file
+    smart.json <- meteorite package definition
 ```
 
 ## License

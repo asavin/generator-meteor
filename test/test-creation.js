@@ -22,7 +22,7 @@ describe('meteor generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       'client/client.js',
-      'client/styles/theme.css',
+      'client/styles/theme.less',
       'client/lib/subscriptions.js',
       'client/views/layout.html',
       'client/views/home.html',
@@ -43,7 +43,8 @@ describe('meteor generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      ironRouter: true
+      ironRouter: true,
+      less: true
     });
 
     this.app.options['skip-install'] = true;

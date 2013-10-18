@@ -23,10 +23,16 @@ MeteorGenerator.prototype.askFor = function askFor() {
     name: 'ironRouter',
     message: 'Would you include Iron Router?',
     default: true
+  },{
+    type: 'confirm',
+    name: 'less',
+    message: 'Will you be using LESS?',
+    default: true
   }];
 
   this.prompt(prompts, function (answers) {
     this.ironRouter = answers.ironRouter;
+    this.less = answers.less;
     cb();
   }.bind(this));
 };
@@ -48,7 +54,6 @@ MeteorGenerator.prototype.app = function app() {
   this.mkdir('.meteor');
 
   this.copy('client/client.js', 'client/client.js');
-  this.copy('client/styles/theme.css', 'client/styles/theme.css');
   this.copy('client/lib/subscriptions.js', 'client/lib/subscriptions.js');
   this.copy('client/views/home.js', 'client/views/home.js');
   this.copy('client/views/home.html', 'client/views/home.html');
@@ -73,5 +78,13 @@ MeteorGenerator.prototype.rootin = function rootin() {
   } else {
     this.copy('client/views/layout.html', 'client/views/layout.html');
     this.copy('.meteor/packages', '.meteor/packages');
+  }
+};
+
+MeteorGenerator.prototype.addLess = function addLess() {
+  if(this.less) {
+    this.copy('client/styles/theme.css', 'client/styles/theme.less');
+  } else {
+    this.copy('client/styles/theme.css', 'client/styles/theme.css');
   }
 };
