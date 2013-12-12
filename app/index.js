@@ -26,7 +26,7 @@ MeteorGenerator.prototype.askFor = function askFor() {
   },{
     type: 'confirm',
     name: 'less',
-    message: 'Will you be using LESS?',
+    message: 'Will you be using LESS? (you need to install meteor less package)',
     default: true
   }];
 
@@ -62,6 +62,7 @@ MeteorGenerator.prototype.app = function app() {
   this.copy('server/publications.js', 'server/publications.js');
   this.copy('server/server.js', 'server/server.js');
   this.copy('server/security.js', 'server/security.js');
+  this.copy('server/fixtures.js', 'server/fixtures.js');
   this.copy('.meteor/gitignore', '.meteor/.gitignore');
   this.copy('.meteor/release', '.meteor/release');
   this.copy('gitignore', '.gitignore');

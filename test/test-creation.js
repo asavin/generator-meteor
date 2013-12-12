@@ -33,6 +33,7 @@ describe('meteor generator', function () {
       'server/publications.js',
       'server/server.js',
       'server/security.js',
+      'server/fixtures.js',
       '.meteor/.gitignore',
       '.meteor/packages',
       '.meteor/release',
